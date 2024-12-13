@@ -6,6 +6,16 @@
   <title>Home</title>
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/homestyle.css">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+        userMenu.textContent = loggedInUser; // Update the menu with the user's email
+    }
+});
+  </script>
 </head>
 <body>
   <header class="header">

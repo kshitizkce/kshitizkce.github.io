@@ -13,6 +13,8 @@ function validateLogin(event) {
         messageDiv.textContent = "Login successful! Redirecting...";
         messageDiv.style.color = "green";
 
+        localStorage.setItem("loggedInUser", email);
+
         // Redirect to home page after 1 second
         setTimeout(() => {
             window.location.href = "home.html";
