@@ -4,100 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ff5722;
-  padding: 10px 20px;
-  color: white;
-}
-
-.header img {
-            width: 200px; /* Adjust the size of the logo as needed */
-            height: 100%;
-        }
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.search-bar {
-  flex: 1;
-  margin: 0 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-
-.cart-button {
-  background-color: white;
-  color: #ff5722;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.main-content {
-  padding: 20px;
-}
-
-.on-sale, .categories {
-  margin-bottom: 40px;
-}
-
-.products {
-  display: flex;
-  gap: 20px;
-}
-
-.product-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  text-align: center;
-  width: 150px;
-}
-
-.product-card img {
-  max-width: 100%;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-}
-
-.discount {
-  color: red;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 20px;
-}
-
-.category-item {
-  background-color: white;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
-}
-  </style>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/homestyle.css">
 </head>
 <body>
   <header class="header">
+    <nav class="horizontal-menu">
+      <ul>
+          <li><a href="#">SAVE MORE ON APP</a></li>
+          <li><a href="#">BECOME A SELLER</a></li>
+          <li><a href="#">HELP & SUPPORT</a></li>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">SIGN UP</a></li>
+          <li><a href="#">भाषा परिवर्तन</a></li>
+      </ul>
+  </nav>
     <img src="assets/images/logo2.jpg" alt="Logo">
     <input type="text" placeholder="Search in MomoBowl" class="search-bar">
     <button class="cart-button">Cart</button>
@@ -131,5 +52,21 @@
       </div>
     </section>
   </main>
+  <footer class="footer-container">
+
+    <div class="footer-social">
+        <p class="footer-description">At MoMoBowl savor the taste of the Himalayas. Enjoy our delicious, handcrafted Nepali Momos.Experience the flavors of Nepal. Order our mouthwatering Momos today.</p>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/qnqmomo.damak" target="_blank"><img src="assets/images/fb.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/momofukugoods/" target="_blank"><img src="assets/images/insta.png" alt="Instagram"></a></li>
+          <li><a href="https://www.youtube.com/watch?v=z4S50ICS8Uo" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a></li>
+          <li><a href="https://kshitizkce.github.io/" target="_blank"><img src="assets/images/browser.png" alt="Website"></a></li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <p>© MomoBowl 2024</p>
+    </div>
+</footer>
 </body>
 </html>
