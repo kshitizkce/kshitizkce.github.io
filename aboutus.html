@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/homestyle.css">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+        userMenu.textContent = loggedInUser; // Update the menu with the user's email
+    }
+});
+
+ocument.getElementById("logout").addEventListener("click", function () {
+    // Clear any user-related data from local storage or session storage (if applicable)
+    localStorage.removeItem("loggedInUser");
+
+    // Redirect to the login page
+    window.location.href = "index.html";
+  });
+  </script>
+  <style>
+    .about-us {
+        background-color: #ffe5d9; /* Light peach background for warmth */
+        color: #333; /* Dark gray text for readability */
+        padding: 50px 20px;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        border-top: 5px solid #ff6f61;
+        border-bottom: 5px solid #ff6f61;
+      }
+      
+      .about-us h1 {
+        font-size: 36px;
+        color: #ff6f61; /* Vibrant coral for headings */
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      
+      .about-us h2 {
+        font-size: 28px;
+        color: #ff8364; /* Slightly lighter coral for subheadings */
+        margin-bottom: 20px;
+      }
+      
+      .about-us .about-description p {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .about-us .about-description p br {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .dropbtn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff5722;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+      
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+    <nav class="horizontal-menu">
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">User</a>
+          <div class="dropdown-content">
+            <a href="index.html" id="logout">Logout</a>
+          </div>
+        </li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </nav>
+</div>
+<a href="home.html">
+  <img src="assets/images/logo2.jpg" alt="Logo">
+</a>
+    <input type="text" placeholder="Search in MomoBowl" class="search-bar">
+    <button class="cart-button">Cart</button>
+  </header>
+  <section class="about-us">
+    <h1>#AboutMoMoBowl</h1>
+    <div class="about-description">
+      <h2>#WeAreMoMoBowl</h2>
+      <p>
+        MoMoBowl is a Nepali-inspired food venture offering authentic, handcrafted momos that bring the taste of the Himalayas to your table. Our dedication lies in creating delightful culinary experiences with every bite, paired with bold Nepali spices and traditional recipes.
+      </p>
+      <p>
+        Beyond just food, MoMoBowl represents a celebration of culture and flavor. We strive to connect communities and bring people closer through the shared love of momos. Our goal is to deliver not only exceptional taste but also a memorable dining journey.
+      </p>
+      <p>
+        #WeAre the essence of Himalayan flavors.
+        <br>#WeBelieve in bringing authentic Nepali cuisine to the world.
+        <br>#WeValue our customers and their trust in us.
+      </p>
+    </div>
+  </section>
+  <footer class="footer-container">
+
+    <div class="footer-social">
+        <p class="footer-description">At MoMoBowl savor the taste of the Himalayas. Enjoy our delicious, handcrafted Nepali Momos.Experience the flavors of Nepal. Order our mouthwatering Momos today.</p>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/qnqmomo.damak" target="_blank"><img src="assets/images/fb.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/momofukugoods/" target="_blank"><img src="assets/images/insta.png" alt="Instagram"></a></li>
+          <li><a href="https://www.youtube.com/watch?v=z4S50ICS8Uo" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a></li>
+          <li><a href="https://kshitizkce.github.io/" target="_blank"><img src="assets/images/browser.png" alt="Website"></a></li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <p>© MomoBowl 2024</p>
+    </div>
+</footer>
+</body>
+</html>

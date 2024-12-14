@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/homestyle.css">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+        userMenu.textContent = loggedInUser; // Update the menu with the user's email
+    }
+});
+
+document.getElementById("contact-Form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Hide the form and show the confirmation message
+    document.getElementById("contact-Form").style.display = "none";
+    document.getElementById("confirmationMessage").style.display = "block";
+  });
+  document.getElementById("logout").addEventListener("click", function () {
+    // Clear any user-related data from local storage or session storage (if applicable)
+    localStorage.removeItem("loggedInUser");
+
+    // Redirect to the login page
+    window.location.href = "index.html";
+  });
+  </script>
+  <style>
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff5722;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    .contact-us {
+  background: linear-gradient(135deg, #f9f4f0, #ffe0b2);
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-us h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff6f00;
+  margin-bottom: 20px;
+}
+
+.contact-details h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.contact-details h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 30px;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.contact-details ul li {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 8px 0;
+}
+
+.contact-details ul.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.contact-details ul.social-links li {
+  margin: 0 10px;
+}
+
+.contact-details ul.social-links li a {
+  font-size: 1.1rem;
+  color: #ff6f00;
+  text-decoration: none;
+}
+
+.contact-details ul.social-links li a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6f00;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #e65c00;
+}
+      
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+    <nav class="horizontal-menu">
+      <ul>
+        <ul>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">User</a>
+              <div class="dropdown-content">
+                <a href="index.html" id="logout">Logout</a>
+              </div>
+            </li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </nav>
+</div>
+<a href="home.html">
+  <img src="assets/images/logo2.jpg" alt="Logo">
+</a>
+    <input type="text" placeholder="Search in MomoBowl" class="search-bar">
+    <button class="cart-button">Cart</button>
+  </header>
+  <!-- Contact Us Section -->
+  <p id="confirmationMessage" style="display: none; color: green; margin-top: 20px;">
+    Your message has been sent to the concerned authority... Thanks!!!
+  </p>
+  <section class="contact-us">
+    <h1>#ContactMoMoBowl</h1>
+    <div class="contact-details">
+      <h2>We'd Love to Hear From You</h2>
+      <p>
+        Whether you have a question, feedback, or a special request, we're here to help. Reach out to us through the contact methods below, and our team will get back to you as soon as possible.
+      </p>
+
+      <h3>Contact Information</h3>
+      <ul>
+        <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+        <li><strong>Email:</strong> support@momobowl.com</li>
+        <li><strong>Address:</strong> 2615 Begin Place, ThunderBay, Canada</li>
+      </ul>
+
+      <h3>Follow Us</h3>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com/qnqmomo.damak" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/momofukugoods/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.youtube.com/watch?v=z4S50ICS8Uo" target="_blank">Web</a></li>
+      </ul>
+
+      <h3>Drop Us a Message</h3>
+      <form id="contactForm" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer-container">
+
+    <div class="footer-social">
+        <p class="footer-description">At MoMoBowl savor the taste of the Himalayas. Enjoy our delicious, handcrafted Nepali Momos.Experience the flavors of Nepal. Order our mouthwatering Momos today.</p>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/qnqmomo.damak" target="_blank"><img src="assets/images/fb.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/momofukugoods/" target="_blank"><img src="assets/images/insta.png" alt="Instagram"></a></li>
+          <li><a href="https://www.youtube.com/watch?v=z4S50ICS8Uo" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a></li>
+          <li><a href="https://kshitizkce.github.io/" target="_blank"><img src="assets/images/browser.png" alt="Website"></a></li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <p>© MomoBowl 2024</p>
+    </div>
+</footer>
+</body>
+</html>

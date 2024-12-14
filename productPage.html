@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/homestyle.css">
+  <link rel="stylesheet" href="css/productpage.css">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+    const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+        userMenu.textContent = loggedInUser; // Update the menu with the user's email
+    }
+});
+window.addEventListener("DOMContentLoaded", () => {
+    // Extract query parameters
+    const params = new URLSearchParams(window.location.search);
+    const productName = params.get("name") || "Default Product Name";
+    const productPrice = params.get("price") || "0.00";
+    const productImage = params.get("image") || "assets/images/default.jpg";
+    const productDescription = params.get("description") || "Default product description.";
+
+    // Update product details on the page
+    document.querySelector(".product-description h1").textContent = productName;
+    document.querySelector(".product-price").textContent = `Price: $${productPrice}`;
+    document.querySelector(".product-main-image").src = productImage;
+    document.querySelector(".product-main-image").alt = `Image of ${productName}`;
+    document.querySelector(".product-details").textContent = productDescription;
+  });
+
+  document.getElementById("logout").addEventListener("click", function () {
+    // Clear any user-related data from local storage or session storage (if applicable)
+    localStorage.removeItem("loggedInUser");
+
+    // Redirect to the login page
+    window.location.href = "index.html";
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Handle Buy Now button
+    document.querySelector(".buy-now-btn").addEventListener("click", function () {
+      alert("Order placed successfully!");
+    });
+
+    // Handle Add to Cart button
+    document.querySelector(".add-to-cart-btn").addEventListener("click", function () {
+      alert("Item successfully added to cart!");
+    });
+  });
+  </script>
+  <style>
+    .dropbtn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff5722;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+    <nav class="horizontal-menu">
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">User</a>
+          <div class="dropdown-content">
+            <a href="index.html" id="logout">Logout</a>
+          </div>
+        </li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+  </nav>
+</div>
+<a href="home.html">
+  <img src="assets/images/logo2.jpg" alt="Logo">
+</a>
+    <input type="text" placeholder="Search in MomoBowl" class="search-bar">
+    <button class="cart-button">Cart</button>
+  </header>
+
+  <div class="product-page">
+    <div class="product-container">
+      <!-- Product Images -->
+      <div class="product-image">
+        <img src="assets/images/logo2.jpg" alt="Product Image" class="product-main-image">
+      </div>
+  
+      <!-- Product Description -->
+      <div class="product-description">
+        <h1></h1>
+        <p class="product-price"></p>
+        <p class="product-details">
+        </p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+        <button class="buy-now-btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <footer class="footer-container">
+
+    <div class="footer-social">
+        <p class="footer-description">At MoMoBowl savor the taste of the Himalayas. Enjoy our delicious, handcrafted Nepali Momos.Experience the flavors of Nepal. Order our mouthwatering Momos today.</p>
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/qnqmomo.damak" target="_blank"><img src="assets/images/fb.png" alt="Facebook"></a></li>
+          <li><a href="https://www.instagram.com/momofukugoods/" target="_blank"><img src="assets/images/insta.png" alt="Instagram"></a></li>
+          <li><a href="https://www.youtube.com/watch?v=z4S50ICS8Uo" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a></li>
+          <li><a href="https://kshitizkce.github.io/" target="_blank"><img src="assets/images/browser.png" alt="Website"></a></li>
+        </ul>
+    </div>
+    <div class="footer-copyright">
+        <p>© MomoBowl 2024</p>
+    </div>
+</footer>
+
+</body>
+</html>
