@@ -3,24 +3,38 @@ function validateLogin(event) {
 
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    const messageDiv = document.getElementById('login-message');
+    const messageElement = document.getElementById('login-message');
 
-    // Retrieve stored credentials from localStorage
-    const storedEmail = localStorage.getItem("userEmail");
-    const storedPassword = localStorage.getItem("userPassword");
+    // API call to validate login credentials
+    const apiUrl = "http://localhost:8080/api/login"; // Update with your actual API URL
+    const loginData = { email, password };
 
-    if (email === storedEmail && password === storedPassword) {
-        messageDiv.textContent = "Login successful! Redirecting...";
-        messageDiv.style.color = "green";
+    fetch(apiUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+    })
+    .then(response => {
+        if (response.ok) {
+            messageElement.texContent = "Login successful! Redirecting to login...";
+            messageElement.style.color = "green";
 
-        localStorage.setItem("loggedInUser", email);
-
-        // Redirect to home page after 1 second
-        setTimeout(() => {
-            window.location.href = "home.html";
-        }, 1000);
-    } else {
-        messageDiv.textContent = "Invalid email or password. Please try again.";
-        messageDiv.style.color = "red";
-    }
+            // Redirect to login page
+            setTimeout(() => {
+                window.location.href = "home.html"; // Update with your actual login page path
+            }, 2000); // Delay to allow user to see the message
+        } else {
+            return response.json().then(data => {
+                messageElement.texContent = data.message || "Login failed.";
+                messageElement.style.color = "red";
+            });
+        }
+    })
+    .catch(error => {
+        messageElement.texContent = "Error connecting to the server.";
+        messageElement.style.color = "red";
+        console.error("Error:", error);
+    });
 }
