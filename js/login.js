@@ -6,7 +6,7 @@ function validateLogin(event) {
     const messageElement = document.getElementById('login-message');
 
     // API call to validate login credentials
-    const apiUrl = "http://localhost:8080/api/login"; // Update with your actual API URL
+    const apiUrl = " https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/login"; // Update with your actual API URL
     const loginData = { email, password };
 
     fetch(apiUrl, {

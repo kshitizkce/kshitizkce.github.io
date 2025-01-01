@@ -14,7 +14,7 @@ function validateSignup(event) {
     }
 
     // API call
-    const apiUrl = "http://localhost:8080/api/signup"; // Update with your actual API URL
+    const apiUrl = " https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/signup"; // Update with your actual API URL
     const signupData = { email, password };
 
     fetch(apiUrl, {
