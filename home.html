@@ -7,19 +7,47 @@
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/homestyle.css">
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
     const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
-    const loggedInUser = localStorage.getItem("loggedInUser");
+    // Retrieve the logged-in user's identifier from local storage
+    const loggedInUserEmail = localStorage.getItem("loggedInUser");
 
-    if (loggedInUser) {
-        userMenu.textContent = loggedInUser; // Update the menu with the user's email
+    if (loggedInUserEmail) {
+        // Define the API endpoint
+        const apiEndpoint = "https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/userDetails";
+
+        // Send a POST request to fetch user data based on the logged-in email
+        fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: loggedInUserEmail }), // Send the email to the API
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user data');
+                }
+                return response.json();
+            })
+            .then((userData) => {
+                if (userData && userData.email) {
+                    // Update the menu with the user's email
+                    userMenu.textContent = userData.email;
+                } else {
+                    console.error('Invalid user data received:', userData);
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching user data:', error);
+            });
+    } else {
+        console.error('No logged-in user found in local storage.');
     }
 });
 
 document.getElementById("logout").addEventListener("click", function () {
-    // Clear any user-related data from local storage or session storage (if applicable)
-    localStorage.removeItem("loggedInUser");
-
+  localStorage.removeItem("loggedInUser");
     // Redirect to the login page
     window.location.href = "index.html";
   });

@@ -1,40 +1,34 @@
 function validateLogin(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    const messageElement = document.getElementById('login-message');
+    const messageElement = document.getElementById('login-message').value;
 
-    // API call to validate login credentials
-    const apiUrl = " https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/login"; // Update with your actual API URL
-    const loginData = { email, password };
+    const apiUrl = "https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/login";
 
     fetch(apiUrl, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(loginData),
+        body: JSON.stringify({ email, password }),
     })
-    .then(response => {
-        if (response.ok) {
-            messageElement.texContent = "Login successful! Redirecting to login...";
-            messageElement.style.color = "green";
-
-            // Redirect to login page
-            setTimeout(() => {
-                window.location.href = "home.html"; // Update with your actual login page path
-            }, 2000); // Delay to allow user to see the message
-        } else {
-            return response.json().then(data => {
-                messageElement.texContent = data.message || "Login failed.";
+        .then((response) => {
+            if (response.ok) {
+                messageElement.textContent = "Login successful! Redirecting...";
+                messageElement.style.color = "green";
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 2000);
+            } else {
+                messageElement.textContent = "Invalid email or password.";
                 messageElement.style.color = "red";
-            });
-        }
-    })
-    .catch(error => {
-        messageElement.texContent = "Error connecting to the server.";
-        messageElement.style.color = "red";
-        console.error("Error:", error);
-    });
+            }
+        })
+        .catch((error) => {
+            messageElement.textContent = "Error connecting to the server.";
+            messageElement.style.color = "red";
+            console.error("Error:", error);
+        });
 }

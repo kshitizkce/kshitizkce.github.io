@@ -14,7 +14,7 @@ function validateSignup(event) {
     }
 
     // API call
-    const apiUrl = " https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/signup"; // Update with your actual API URL
+    const apiUrl = " https://c1d1-2604-3d09-b982-a200-4025-7d3-973f-60ed.ngrok-free.app/api/signup"; 
     const signupData = { email, password };
 
     fetch(apiUrl, {
@@ -31,7 +31,7 @@ function validateSignup(event) {
 
             // Redirect to login page
             setTimeout(() => {
-                window.location.href = "index.html"; // Update with your actual login page path
+                window.location.href = "index.html"; 
             }, 2000); // Delay to allow user to see the message
         } else {
             return response.json().then(data => {
