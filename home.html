@@ -18,6 +18,17 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.getElementById("account").addEventListener("click", function () {
+    // Redirect to the account page
+    window.location.href = "account.html";
+  });
+
+  document.getElementById("orders").addEventListener("click", function () {
+    // Redirect to the account page
+    window.location.href = "orders.html";
+  });
+
+
 document.getElementById("logout").addEventListener("click", function () {
     // Redirect to the login page
     localStorage.removeItem("loggedInUser");
@@ -72,6 +83,8 @@ document.getElementById("logout").addEventListener("click", function () {
         <li class="dropdown">
           <a href="#" class="dropbtn" id="user">User</a>
           <div class="dropdown-content">
+            <a href="account.html" id="account">Manage my account</a>
+            <a href="orders.html" id="orders">My Orders</a>
             <a href="index.html" id="logout">Logout</a>
           </div>
         </li>
