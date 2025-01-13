@@ -20,29 +20,34 @@ function validateSignup(event) {
     fetch(apiUrl, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+        "Content-Type": "application/json",   // Additional headers if needed
         },
-        body: JSON.stringify(signupData),
+        body: JSON.stringify({ email, password }),
     })
-    .then(response => {
-        if (response.ok) {
-            messageElement.textContent = "Signup successful! Redirecting to login...";
+        .then((response) => {
+            if (response.ok) {
+                 message = response.text();
+                return message; // Read the response text (e.g., "Signup successful")
+            } else {
+                return response.text().then((text) => {
+                    throw new Error(text); // Throw an error with the response text (message)
+                });
+            }
+        })
+        .then((message) => {
+            // Successful signup
+            messageElement.textContent = message; // Display the success message
             messageElement.style.color = "green";
-
-            // Redirect to login page
+    
+            // Redirect after 2 seconds
             setTimeout(() => {
-                window.location.href = "index.html"; 
-            }, 2000); // Delay to allow user to see the message
-        } else {
-            return response.json().then(data => {
-                messageElement.textContent = data.message || "Signup failed.";
-                messageElement.style.color = "red";
-            });
-        }
-    })
-    .catch(error => {
-        messageElement.textContent = "Error connecting to the server.";
-        messageElement.style.color = "red";
-        console.error("Error:", error);
-    });
-}
+                window.location.href = "index.html";
+            }, 2000);
+        })
+        .catch((error) => {
+            // Handle errors (e.g., invalid credentials)
+            messageElement.textContent = error.message; // Display error message
+            messageElement.style.color = "red";
+            console.error("Error:", error);
+        });
+    }
