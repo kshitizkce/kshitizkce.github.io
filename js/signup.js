@@ -49,5 +49,12 @@ function validateSignup(event) {
             messageElement.textContent = error.message; // Display error message
             messageElement.style.color = "red";
             console.error("Error:", error);
+            setTimeout(() => {
+                document.getElementById("signup-email").value = "";
+             document.getElementById("signup-password").value = "";
+             document.getElementById("signup-confirm-password").value = "";
+             messageElement.textContent = "";
+            }, 2000);
         });
+        
     }

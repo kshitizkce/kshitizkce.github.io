@@ -16,14 +16,6 @@
     }
 });
 
-document.getElementById("contact-Form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    // Hide the form and show the confirmation message
-    document.getElementById("contact-Form").style.display = "none";
-    document.getElementById("confirmationMessage").style.display = "block";
-  });
-
   document.getElementById("account").addEventListener("click", function () {
     // Redirect to the account page
     window.location.href = "account.html";
@@ -242,7 +234,7 @@ document.getElementById("contact-Form").addEventListener("submit", function (eve
       </ul>
 
       <h3>Drop Us a Message</h3>
-      <form id="contactForm" class="contact-form">
+      <form onsubmit="sendMessage(event)" id="contactForm" class="contact-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -255,6 +247,7 @@ document.getElementById("contact-Form").addEventListener("submit", function (eve
         <button type="submit">Send Message</button>
       </form>
     </div>
+    <div id="contactus-message" class="message"></div>
   </section>
   <footer class="footer-container">
 
@@ -272,5 +265,6 @@ document.getElementById("contact-Form").addEventListener("submit", function (eve
         <p>© MomoBowl 2024</p>
     </div>
 </footer>
+<script src="js/contactus.js"></script>
 </body>
 </html>

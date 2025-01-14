@@ -45,5 +45,10 @@ function validateLogin(event) {
             messageElement.textContent = error.message; // Display error message
             messageElement.style.color = "red";
             console.error("Error:", error);
+            setTimeout(() => {
+                document.getElementById('login-email').value = "";
+                document.getElementById('login-password').value="";
+                messageElement.textContent = "";
+            }, 2000);
         });
     }
