@@ -1,0 +1,75 @@
+.manage-account {
+  background-color: #f9f9f9;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.account-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-section, .address-section, .orders-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h2, .address-section h2, .orders-section h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.profile-details p, .address-details p {
+  margin: 5px 0;
+}
+
+.marketing-preferences {
+  margin-top: 10px;
+}
+
+.marketing-preferences label {
+  display: block;
+  font-size: 14px;
+}
+
+.address-details div {
+  margin-bottom: 20px;
+}
+
+.orders-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-section th, .orders-section td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.orders-section th {
+  background-color: #f0f0f0;
+}
+
+.orders-section img {
+  max-height: 50px;
+}
+
+.manage-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}

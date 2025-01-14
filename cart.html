@@ -6,6 +6,8 @@
   <title>Home</title>
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/homestyle.css">
+  <link rel="stylesheet" href="css/cart.css">
+  
   <script>
     window.addEventListener("DOMContentLoaded", () => {
     const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
@@ -103,6 +105,7 @@ document.getElementById("logout").addEventListener("click", function () {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .cart-button {
   display: inline-block;
   position: relative;
@@ -153,23 +156,91 @@ document.getElementById("logout").addEventListener("click", function () {
       <img src="assets/images/cart1.webp" alt="Logo">
     </a>
   </header>
-  <section class="about-us">
-    <h1>#AboutMoMoBowl</h1>
-    <div class="about-description">
-      <h2>#WeAreMoMoBowl</h2>
-      <p>
-        MoMoBowl is a Nepali-inspired food venture offering authentic, handcrafted momos that bring the taste of the Himalayas to your table. Our dedication lies in creating delightful culinary experiences with every bite, paired with bold Nepali spices and traditional recipes.
-      </p>
-      <p>
-        Beyond just food, MoMoBowl represents a celebration of culture and flavor. We strive to connect communities and bring people closer through the shared love of momos. Our goal is to deliver not only exceptional taste but also a memorable dining journey.
-      </p>
-      <p>
-        #WeAre the essence of Himalayan flavors.
-        <br>#WeBelieve in bringing authentic Nepali cuisine to the world.
-        <br>#WeValue our customers and their trust in us.
-      </p>
+  <section class="shopping-cart">
+    <div class="cart-container">
+      <!-- Header Section -->
+      <div class="cart-header">
+        <label><input type="checkbox"> Select All (3 Items)</label>
+        <button class="delete-all">Delete</button>
+      </div>
+  
+      <!-- Cart Items -->
+      <div class="cart-item">
+        <div class="item-header">
+          <input type="checkbox">
+          <h4>Ocean Blue Tech HUB</h4>
+        </div>
+        <div class="item-content">
+          <img src="item1.jpg" alt="Mini LED Flashlight">
+          <div class="item-details">
+            <p>Mini LED Flashlight Work Light Portable Pocket Flashlight Keychains USB Rechargeable For Outdoor</p>
+            <p>No Brand, Color Family: Black</p>
+            <p><span class="low-stock">5 item(s) left</span></p>
+          </div>
+          <div class="item-price">
+            <span class="current-price">Rs. 189</span>
+            <span class="original-price">Rs. 380</span>
+          </div>
+          <div class="quantity-control">
+            <button class="quantity-decrease">-</button>
+            <input type="text" value="1">
+            <button class="quantity-increase">+</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="cart-item">
+        <div class="item-header">
+          <input type="checkbox">
+          <h4>White Peak Mountain Gear</h4>
+        </div>
+        <div class="item-content">
+          <img src="item2.jpg" alt="Leki Anti-Shock Trekking Stick">
+          <div class="item-details">
+            <p>Leki Anti-Shock Trekking Stick</p>
+            <p>No Brand, Color Family: Blue</p>
+            <p><span class="low-stock">7 item(s) left</span></p>
+          </div>
+          <div class="item-price">Rs. 699</div>
+          <div class="quantity-control">
+            <button class="quantity-decrease">-</button>
+            <input type="text" value="1">
+            <button class="quantity-increase">+</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Unavailable Items -->
+      <div class="unavailable-items">
+        <h4>Unavailable Items (1)</h4>
+        <div class="item-content">
+          <img src="item3.jpg" alt="Out of Stock">
+          <div class="item-details">
+            <p>Amry Color 70+5 Liters Trekking Backpack For Men</p>
+            <p>No Brand, Color Family: Army Color</p>
+            <p><span class="out-of-stock">Out of stock</span></p>
+          </div>
+          <div class="item-price">Rs. 2,599</div>
+        </div>
+      </div>
+  
+      <!-- Summary Section -->
+      <div class="cart-summary">
+        <h4>Location</h4>
+        <p>Chabahil Chowk, Kathmandu Metro 7 - Chabahil Area, Bagmati Province</p>
+        <h4>Order Summary</h4>
+        <p>Subtotal (0 items): Rs. 0</p>
+        <p>Shipping Fee: Rs. 0</p>
+        <div class="voucher-section">
+          <input type="text" placeholder="Enter Voucher Code">
+          <button class="apply-btn">Apply</button>
+        </div>
+        <h4>Total: Rs. 0</h4>
+        <button class="checkout-btn">Proceed to Checkout (0)</button>
+      </div>
     </div>
   </section>
+  
   <footer class="footer-container">
 
     <div class="footer-social">

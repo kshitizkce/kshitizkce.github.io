@@ -6,6 +6,7 @@
   <title>Home</title>
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/homestyle.css">
+  <link rel="stylesheet" href="css/manageaccount.css">
   <script>
     window.addEventListener("DOMContentLoaded", () => {
     const userMenu = document.querySelector('li a[href="#"]'); // Select the "User" menu item
@@ -23,7 +24,7 @@ document.getElementById("account").addEventListener("click", function () {
 
   document.getElementById("orders").addEventListener("click", function () {
     // Redirect to the account page
-    window.location.href = "myorders.html";
+    window.location.href = "orders.html";
   });
 
 document.getElementById("logout").addEventListener("click", function () {
@@ -103,6 +104,7 @@ document.getElementById("logout").addEventListener("click", function () {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .cart-button {
   display: inline-block;
   position: relative;
@@ -153,21 +155,86 @@ document.getElementById("logout").addEventListener("click", function () {
       <img src="assets/images/cart1.webp" alt="Logo">
     </a>
   </header>
-  <section class="about-us">
-    <h1>#AboutMoMoBowl</h1>
-    <div class="about-description">
-      <h2>#WeAreMoMoBowl</h2>
-      <p>
-        MoMoBowl is a Nepali-inspired food venture offering authentic, handcrafted momos that bring the taste of the Himalayas to your table. Our dedication lies in creating delightful culinary experiences with every bite, paired with bold Nepali spices and traditional recipes.
-      </p>
-      <p>
-        Beyond just food, MoMoBowl represents a celebration of culture and flavor. We strive to connect communities and bring people closer through the shared love of momos. Our goal is to deliver not only exceptional taste but also a memorable dining journey.
-      </p>
-      <p>
-        #WeAre the essence of Himalayan flavors.
-        <br>#WeBelieve in bringing authentic Nepali cuisine to the world.
-        <br>#WeValue our customers and their trust in us.
-      </p>
+  <section class="manage-account">
+    <div class="account-container">
+      <!-- Personal Profile Section -->
+      <div class="profile-section">
+        <h2>Personal Profile <a href="#" class="edit-link">EDIT</a></h2>
+        <div class="profile-details">
+          <p><strong>Name:</strong> Kshitiz Kce</p>
+          <p><strong>Email:</strong> ks*********@gmail.com</p>
+          <div class="marketing-preferences">
+            <label>
+              <input type="checkbox" checked disabled> Receive marketing SMS
+            </label>
+            <label>
+              <input type="checkbox" checked disabled> Receive marketing emails
+            </label>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Address Book Section -->
+      <div class="address-section">
+        <h2>Address Book <a href="#" class="edit-link">EDIT</a></h2>
+        <div class="address-details">
+          <div>
+            <h4>Default Shipping Address</h4>
+            <p>KK</p>
+            <p>Krishnamandir, near Shree Krishna School</p>
+            <p>Bagmati Province, Kathmandu Metro 7</p>
+            <p>Chabahil Area, Chabahil Chowk</p>
+            <p>(+977) 9823091953</p>
+          </div>
+          <div>
+            <h4>Default Billing Address</h4>
+            <p>Pooja Timalsina</p>
+            <p>Near Apex College</p>
+            <p>Bagmati Province, Kathmandu Metro 10</p>
+            <p>New Baneshwor Area, New Baneshwor Chowk</p>
+            <p>(+977) 9860937035</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Recent Orders Section -->
+      <div class="orders-section">
+        <h2>Recent Orders</h2>
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Placed On</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>205549986109856</td>
+              <td>16/05/2023</td>
+              <td><img src="assets/images/item1.jpg" alt="Item 1"></td>
+              <td>Rs. 3,329</td>
+              <td><a href="#" class="manage-link">Manage</a></td>
+            </tr>
+            <tr>
+              <td>204336769109856</td>
+              <td>25/08/2022</td>
+              <td><img src="assets/images/item2.jpg" alt="Item 2"></td>
+              <td>Rs. 1,065</td>
+              <td><a href="#" class="manage-link">Manage</a></td>
+            </tr>
+            <tr>
+              <td>202554864809856</td>
+              <td>05/08/2021</td>
+              <td><img src="assets/images/item3.jpg" alt="Item 3"></td>
+              <td>Rs. 3,579</td>
+              <td><a href="#" class="manage-link">Manage</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
   <footer class="footer-container">

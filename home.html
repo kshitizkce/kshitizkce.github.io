@@ -20,12 +20,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("account").addEventListener("click", function () {
     // Redirect to the account page
-    window.location.href = "account.html";
+    window.location.href = "manageAccount.html";
   });
 
   document.getElementById("orders").addEventListener("click", function () {
     // Redirect to the account page
-    window.location.href = "orders.html";
+    window.location.href = "myorders.html";
   });
 
 
@@ -73,6 +73,29 @@ document.getElementById("logout").addEventListener("click", function () {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Styling for the cart button */
+.cart-button {
+  display: inline-block;
+  position: relative;
+  width: 40px; /* Set the desired size for the cart icon */
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.cart-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image fits well inside the button */
+}
+
+/* Optional: Hover effect */
+.cart-button:hover {
+  opacity: 0.8; /* Slight opacity change on hover for interactivity */
+}
+
   </style>
 </head>
 <body>
@@ -83,8 +106,8 @@ document.getElementById("logout").addEventListener("click", function () {
         <li class="dropdown">
           <a href="#" class="dropbtn" id="user">User</a>
           <div class="dropdown-content">
-            <a href="account.html" id="account">Manage my account</a>
-            <a href="orders.html" id="orders">My Orders</a>
+            <a href="manageAccount.html" id="account">Manage my account</a>
+            <a href="myorders.html" id="orders">My Orders</a>
             <a href="index.html" id="logout">Logout</a>
           </div>
         </li>
@@ -97,7 +120,9 @@ document.getElementById("logout").addEventListener("click", function () {
   <img src="assets/images/logo2.jpg" alt="Logo">
 </a>
     <input type="text" placeholder="Search in MomoBowl" class="search-bar">
-    <button class="cart-button">Cart</button>
+    <a href="cart.html" class="cart-button">
+      <img src="assets/images/cart1.webp" alt="Logo">
+    </a>
   </header>
   <main class="main-content">
     <section class="on-sale">
