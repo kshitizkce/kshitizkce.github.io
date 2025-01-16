@@ -41,6 +41,13 @@ body {
     border: 1px solid #ddd;
     border-right: none; /* Remove border on the right */
     border-radius: 4px 0 0 4px; /* Rounded corners on the left */
+     width: 20px; /* Shortened width for compactness */
+    padding: 6px; /* Reduced padding */
+    border: none;
+    font-size: 12px; /* Smaller font */
+    outline: none;
+    flex-grow: 1; /* Allows it to shrink within the container */
+  width: 100px; /* Ensure its width is short */
   }
   
   #search-button {
@@ -241,30 +248,6 @@ body {
     height: 40px; /* Adjust logo size if needed */
 }
 
-.search-bar {
-    width: 20px; /* Shortened width for compactness */
-    padding: 6px; /* Reduced padding */
-    border: none;
-    font-size: 12px; /* Smaller font */
-    outline: none;
-    flex-grow: 1; /* Allows it to shrink within the container */
-  width: 100px; /* Ensure its width is short */
-  }
-
-.cart-button {
-    background-color: white;
-    color: #ff6700;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: -10px; /* Negative margin to move it left */
-}
-.cart-button:hover {
-    background-color: #ffe0cc;
-}
-
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -312,8 +295,5 @@ body {
       flex-wrap: wrap;
     }
 
-    .cart-button {
-      width: 100%;
-      margin-top: 10px;
-    }
+    
   }
